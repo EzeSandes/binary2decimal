@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Binary to Decimal | Eze</title>
+
+   <!--Font Awesome-->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+   <!-- My Styles-->
+   <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+   <header class="container">
+      <img class="logo" src="images/Logo.svg" alt="logo-binary-to-decimal">
+   </header>
+
+   <section id="fields" class="container flex">
+      <div class="flex flex-clm flex-start">
+         <label for="binary-value">From</label>
+         <input name="binary-value" class="input-control-lg" id="binary-value" inputmode="numeric"
+            placeholder="Binary value" required>
+      </div>
+      <div class="flex flex-clm flex-start">
+         <label for="decimal-value">To</label>
+         <input name="decimal-value" class="input-control-lg" id="decimal-value" inputmode="numeric"
+            placeholder="Decimal value">
+      </div>
+   </section>
+
+   <section id="buttons-convert" class="container flex">
+      <button id="btn-convert" class="btn btn-primary"><i class="fas fa-sync-alt fa-lg"></i> Convert</button>
+      <button id="btn-reset" class="btn btn-secondary"><i class="fas fa-times fa-lg"></i> Reset</button>
+      <button id="btn-swap" class="btn btn-secondary"><i class="fas fa-retweet fa-lg"></i> Swap</button>
+   </section>
+
+   <script src="app.js"></script>
+</body>
+
+</html>
