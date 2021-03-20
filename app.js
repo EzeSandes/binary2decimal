@@ -31,10 +31,12 @@ const toDecimal = function () {
 // Without use "toString()" method
 const toBinary = function () {
    let integerValue = Number(binaryField.value);
+   let decimalValue = Number(binaryField.value) % 1;// The decimal part of the number.
    let binaryValues = [];
 
-   // Only positives, valid and integer numbers
-   if (integerValue < 0 || Number.isNaN(integerValue) || integerValue % 1 != 0) {
+   //Integer Part
+   // Only positives and valid numbers
+   if (integerValue < 0 || Number.isNaN(integerValue)) {
       decimalField.value = 'Only positive and valid numbers'; // DecimalField is the Binary Field
       return;
    }
@@ -43,6 +45,23 @@ const toBinary = function () {
       binaryValues.unshift(Math.trunc(integerValue % 2));
 
    binaryValues.unshift(Math.trunc(integerValue));
+
+   //Decimal part
+
+   if (decimalValue) {
+      binaryValues.push('.');
+      let decimal = '';
+      do {
+         decimalValue = (decimalValue % 1) * 2;
+         decimal = (decimalValue + '').slice(2);//Extract since the first decimal number after the point
+         console.log(decimal);
+         console.log(decimalValue);
+
+         binaryValues.push(Math.trunc(decimalValue));
+         if (decimal[0] === '0') break;
+
+      } while (decimalValue % 1 != 0);
+   }
 
    //Binary Value
    decimalField.value = binaryValues.join('');
