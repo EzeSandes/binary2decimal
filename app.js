@@ -54,8 +54,6 @@ const toBinary = function () {
       do {
          decimalValue = (decimalValue % 1) * 2;
          decimal = (decimalValue + '').slice(2);//Extract since the first decimal number after the point
-         console.log(decimal);
-         console.log(decimalValue);
 
          binaryValues.push(Math.trunc(decimalValue));
          if (decimal[0] === '0') break;
