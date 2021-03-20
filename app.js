@@ -14,7 +14,6 @@ const toDecimal = function () {
    const binaryLength = binaryValues.length - 1;
    let decimalNumber = 0;
 
-   //REDUCE METHOD??. El problema es que se debera cortar la aplicacion sin el return
    for (const [i, value] of binaryValues.entries()) {
       if (!(value === '1' || value === '0')) {
          decimalField.value = 'Not a valid binary number';
